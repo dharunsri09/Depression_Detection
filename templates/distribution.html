@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Distribution</title>
+</head>
+<style>
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the navigation bar */
+.navbar {
+    display:flex;
+    width: 100%;
+  overflow: hidden;
+  height: fit-content;
+  background-color: #333; /* Change the background color as desired */
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  
+  color: white; /* Change the text color as desired */
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Change color of links on hover */
+.navbar a:hover {
+  background-color: #ddd; /* Change the background color on hover as desired */
+  color: black; /* Change the text color on hover as desired */
+}
+
+.navbar h1{
+    display: inline;
+}
+.navbar ul{
+ flex-direction: column;
+ 
+ display: inline;
+}
+.screen_data{
+    flex-grow: 1;
+}
+.navbar li{
+    display: inline;
+}
+.bold_text{
+    margin-left: 10px;
+    color: #bf3b3b;
+    display: inline;
+}
+</style>
+</head>
+<body style="background-color: bisque;">
+    <div class="navbar">
+        <h1 class="bold_text">Emotion Detection</h1>
+        <div class="screen_data"></div>
+        <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/show_distribution">Graph</a></li>
+        <li><a href="/">Logout</a></li>
+    </ul>
+    </div>
+    <div class="video_graph">
+            <h1>Video detection graph</h1>
+            <img src="data:image/png;base64,{{ image_base64 }}" alt="Bar Chart">
+
+    </div>
+</body>
+</html>

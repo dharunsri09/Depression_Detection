@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us</title>
+<style>
+    /* Global Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Section Styles */
+
+.team, .contact {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.team h2, .contact h2 {
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.team ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.team ul li {
+    margin-bottom: 10px;
+}
+
+/* Link Styles */
+
+a {
+    color: #007bff; /* Change link color as desired */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the navigation bar */
+.navbar {
+    display:flex;
+    width: 100%;
+  overflow: hidden;
+  height: fit-content;
+  background-color: #333; /* Change the background color as desired */
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  
+  color: white; /* Change the text color as desired */
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Change color of links on hover */
+.navbar a:hover {
+  background-color: #ddd; /* Change the background color on hover as desired */
+  color: black; /* Change the text color on hover as desired */
+}
+
+.navbar h1{
+    display: inline;
+}
+.navbar ul{
+ flex-direction: column;
+ 
+ display: inline;
+}
+.screen_data{
+    flex-grow: 1;
+}
+.navbar li{
+    display: inline;
+}
+.bold_text{
+    margin-left: 10px;
+    color: #bf3b3b;
+    display: inline;
+}
+</style>
+</head>
+<body style="background-color: bisque;">
+
+
+<main>
+    <div class="navbar">
+        <h1 class="bold_text">Emotion Detection</h1>
+        <div class="screen_data"></div>
+        <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/show_distribution">Graph</a></li>
+        <li><a href="/">Logout</a></li>
+    </ul>
+</div>
+    <section class="team">
+        <center><h2 >Silver Eagle</h2></center>
+        <h2>Tutor</h2><p>Mr.Diwakaren M</p>
+        <h2>Squad</h2>
+        <ul>
+            <li>Adhiyan A M</li>
+            <li>Balavignesh K</li>
+            <li>Dharun</li>
+        </ul>
+        
+    </section>
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: thebesthackermd@gmail.com</p>
+        <p>Phone: 1234567890</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; leinfinity&co</p>
+</footer>
+
+</body>
+</html>

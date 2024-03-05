@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Recorder</title>
+</head>
+<body>
+    <h1>Record Audio</h1>
+    <button id="recordButton">Start Recording</button>
+    <script>
+        let chunks = [];
+        let mediaRecorder;
+
+        navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(stream => {
+                mediaRecorder = new MediaRecorder(stream);
+                
+                mediaRecorder.ondataavailable = e => {
+                    chunks.push(e.data);
+                };
+                
+                mediaRecorder.onstop = () => {
+                    const blob = new Blob(chunks, { type: 'audio/wav' });
+                    const formData = new FormData();
+                    formData.append('audio', blob, 'recorded_audio.wav');
+
+                    fetch('/record', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        console.log('Success:', response);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                    
+                    chunks = [];
+                };
+            });
+
+        document.getElementById('recordButton').addEventListener('click', () => {
+            if (mediaRecorder.state === 'inactive') {
+                mediaRecorder.start();
+                document.getElementById('recordButton').textContent = 'Stop Recording';
+            } else {
+                mediaRecorder.stop();
+                document.getElementById('recordButton').textContent = 'Start Recording';
+            }
+        });
+    </script>
+    <a href="process"><button>Predict</button></a>
+</body>
+</html>
